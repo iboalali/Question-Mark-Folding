@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# Question-Mark-Folding Changelog
+# Question Mark Folding Changelog
 
 ## [Unreleased]
 ### Added

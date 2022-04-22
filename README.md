@@ -1,4 +1,4 @@
-# Question-Mark-Folding
+# Question Mark Folding
 
 ![Build](https://github.com/iboalali/Question-Mark-Folding/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
@@ -26,7 +26,7 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 
 - Using IDE built-in plugin system:
   
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Question-Mark-Folding"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Question Mark Folding"</kbd> >
   <kbd>Install Plugin</kbd>
   
 - Manually:

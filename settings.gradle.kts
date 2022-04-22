@@ -1,1 +1,1 @@
-rootProject.name = "Question-Mark-Folding"
+rootProject.name = "Question Mark Folding"
