@@ -5,10 +5,15 @@
     <vendor>iboalali</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java-capable</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.iboalali.questionmarkfolding.services.MyApplicationService"/>
+        <applicationService
+                serviceImplementation="com.github.iboalali.questionmarkfolding.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.iboalali.questionmarkfolding.services.MyProjectService"/>
+        <lang.foldingBuilder language="JAVA"
+                             implementationClass="com.github.iboalali.questionmarkfolding.foldings.QuestionMarkFoldingBuilder"/>
     </extensions>
 
     <applicationListeners>
