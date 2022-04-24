@@ -6,25 +6,35 @@ import com.intellij.lang.folding.FoldingDescriptor
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.FoldingGroup
 import com.intellij.openapi.project.DumbAware
+import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiLiteralValue
+import com.intellij.psi.PsiIdentifier
 import com.intellij.psi.util.PsiTreeUtil
 
-class QuestionMarkFoldingBuilder() : FoldingBuilderEx(), DumbAware {
+class QuestionMarkFoldingBuilder : FoldingBuilderEx(), DumbAware {
 
+    init {
+        println("${this::class.simpleName} loaded")
+    }
 
     override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> {
         val group = FoldingGroup.newGroup("Question Marks Group")
 
-        val descriptors = mutableListOf<FoldingDescriptor>()
+        // PsiIdentifier: classes methods fields and local fields
+        val identifiers = PsiTreeUtil.findChildrenOfType(root, PsiIdentifier::class.java)
+        val foundIdentifiers = identifiers.filter { it.text.endsWith("QuestionMark") }
 
-        //val literalExpression: Collection<PsiLiteralValue> = PsiTreeUtil.findChildOfType(root, PsiLiteralValue)
+        val descriptors = foundIdentifiers.map { FoldingDescriptor(
+            it.node,
+            it.textRange,
+            group
+        ) }
 
-        return arrayOf()
+        return descriptors.toTypedArray()
     }
 
     override fun getPlaceholderText(node: ASTNode): String {
-        return "?"
+        return node.text.replace("QuestionMark", "?")
     }
 
     override fun isCollapsedByDefault(node: ASTNode): Boolean {
