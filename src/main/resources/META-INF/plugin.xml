@@ -6,13 +6,11 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.java-capable</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService
-                serviceImplementation="com.github.iboalali.questionmarkfolding.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.iboalali.questionmarkfolding.services.MyProjectService"/>
         <lang.foldingBuilder language="JAVA"
+                             order="first"
                              implementationClass="com.github.iboalali.questionmarkfolding.foldings.QuestionMarkFoldingBuilder"/>
     </extensions>
 
